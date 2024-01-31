@@ -1,0 +1,23 @@
+.button{
+    -fx-border-color: gray;
+    -fx-border-radius: 10px;
+    -fx-background-color: transparent
+}
+#borderpane {
+    -fx-start-margin:0;
+    -fx-padding:0;
+    -fx-font-family: sans-serif;
+    -fx-background-color: linear-gradient(#141e30, #243b55);
+}
+
+.input{
+    -fx-border-radius: 5px;
+    -fx-border-color: gray;
+    -fx-background-color: none;
+    -fx-text-fill: white;
+}
+.title{
+    -fx-font-family: "Dubai Light";
+    -fx-font-size: 20px;
+    -fx-background-color: transparent;
+}
