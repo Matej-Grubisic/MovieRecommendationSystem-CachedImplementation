@@ -13,7 +13,7 @@
    <children>
       <HBox layoutY="-5.0" prefHeight="36.0" prefWidth="1494.0" styleClass="navbar" stylesheets="@styles.css">
          <children>
-            <Label prefHeight="50.0" prefWidth="543.0" styleClass="navtxt" stylesheets="@styles.css" text="Welcome back + username" textAlignment="CENTER">
+            <Label fx:id="welcomelbl" prefHeight="50.0" prefWidth="543.0" styleClass="navtxt" stylesheets="@styles.css" text="Welcome back + username" textAlignment="CENTER">
                <font>
                   <Font size="30.0" />
                </font>
@@ -23,7 +23,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="343.0" styleClass="navbtn" text="Discover">
+            <Button mnemonicParsing="false" prefHeight="53.0" prefWidth="343.0" styleClass="navbtn" text="Discover">
                <font>
                   <Font size="18.0" />
                </font>
@@ -60,10 +60,11 @@
             <Image url="@../../../../../../../Pictures/fatcat.png" />
          </image>
       </ImageView>
-      <Label layoutX="208.0" layoutY="227.0" text="Label" />
-      <Label layoutX="771.0" layoutY="228.0" text="Label" />
-      <Label layoutX="517.0" layoutY="229.0" text="Label" />
-      <Label layoutX="1011.0" layoutY="227.0" text="Label" />
+
+      <Label fx:id="lbl1" layoutX="208.0" layoutY="227.0" text="Label" />
+      <Label fx:id="lbl2" layoutX="771.0" layoutY="228.0" text="Label" />
+      <Label fx:id="lbl3" layoutX="517.0" layoutY="229.0" text="Label" />
+      <Label fx:id="lbl4" layoutX="1011.0" layoutY="227.0" text="Label" />
       <Button layoutX="1176.0" layoutY="161.0" mnemonicParsing="false" text="Next" />
       <Button layoutX="35.0" layoutY="161.0" mnemonicParsing="false" text="Prev" />
    </children>
