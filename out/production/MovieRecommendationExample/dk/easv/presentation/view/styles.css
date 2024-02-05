@@ -10,6 +10,10 @@
     -fx-background-color: linear-gradient(#141e30, #243b55);
 }
 
+#anchorpane {
+    -fx-background-color: linear-gradient(#141e30, #243b55);
+}
+
 .input{
     -fx-border-radius: 5px;
     -fx-border-color: gray;
@@ -20,4 +24,33 @@
     -fx-font-family: "Dubai Light";
     -fx-font-size: 20px;
     -fx-background-color: transparent;
+}
+
+.list{
+
+}
+
+.navbar{
+    -fx-border-color: transparent transparent black transparent;
+    -fx-border-width: 2px;
+}
+
+.navbtn{
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+
+}
+.navbtn:hover{
+    -fx-border-width: 2px;
+    -fx-border-radius: 0px;
+    -fx-background-color: grey;
+
+}
+.navpfp{
+    -fx-border-color: transparent;
+    -fx-border-radius: 0px;
+    -fx-background-color: black;
+}
+.navpfp:hover{
+
 }
