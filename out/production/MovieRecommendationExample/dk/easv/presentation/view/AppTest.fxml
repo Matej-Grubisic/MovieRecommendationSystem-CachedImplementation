@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="701.0" prefWidth="1242.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.easv.presentation.controller.AppController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="701.0" prefWidth="1230.0" styleClass="anchorpane" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.easv.presentation.controller.AppController">
    <children>
       <HBox layoutY="-5.0" prefHeight="55.0" prefWidth="1243.0" styleClass="navbar" stylesheets="@styles.css">
          <children>
@@ -29,7 +29,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <ImageView fx:id="imagepfp" accessibleText="aaaa" fitHeight="55.0" fitWidth="55.0" onMouseClicked="#ClickPFP" pickOnBounds="true" preserveRatio="true" styleClass="navpfp">
+            <ImageView fx:id="imagepfp" accessibleText="aaaa" fitHeight="55.0" fitWidth="61.0" onMouseClicked="#ClickPFP" pickOnBounds="true" preserveRatio="true" styleClass="navpfp">
                <HBox.margin>
                   <Insets right="-5.0" />
                </HBox.margin></ImageView>
@@ -47,7 +47,7 @@
          <children>
             <VBox prefHeight="299.0" prefWidth="200.0" style="-fx-alignment: center;">
                <children>
-                  <ImageView fx:id="movimage1" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="navpfp">
+                  <ImageView fx:id="movimage1" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <VBox.margin>
                         <Insets right="15.0" />
                      </VBox.margin>
@@ -57,7 +57,7 @@
             </VBox>
             <VBox prefHeight="299.0" prefWidth="200.0" style="-fx-alignment: center;">
                <children>
-                  <ImageView fx:id="movimage2" accessibleText="aaaa" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="navpfp">
+                  <ImageView fx:id="movimage2" accessibleText="aaaa" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <VBox.margin>
                         <Insets left="15.0" right="15.0" />
                      </VBox.margin>
@@ -67,7 +67,7 @@
             </VBox>
             <VBox prefHeight="299.0" prefWidth="200.0" style="-fx-alignment: center;">
                <children>
-                  <ImageView fx:id="movimage3" accessibleText="aaaa" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="navpfp">
+                  <ImageView fx:id="movimage3" accessibleText="aaaa" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <VBox.margin>
                         <Insets left="15.0" right="15.0" />
                      </VBox.margin>
@@ -77,7 +77,7 @@
             </VBox>
             <VBox prefHeight="299.0" prefWidth="200.0" style="-fx-alignment: center;">
                <children>
-                  <ImageView fx:id="movimage4" accessibleText="aaaa" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="navpfp">
+                  <ImageView fx:id="movimage4" accessibleText="aaaa" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <VBox.margin>
                         <Insets left="15.0" />
                      </VBox.margin>
@@ -90,7 +90,7 @@
          <children>
             <VBox prefHeight="299.0" prefWidth="200.0" style="-fx-alignment: center;">
                <children>
-                  <ImageView fx:id="movimage5" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="navpfp">
+                  <ImageView fx:id="movimage5" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <VBox.margin>
                         <Insets right="15.0" />
                      </VBox.margin>
@@ -100,7 +100,7 @@
             </VBox>
             <VBox prefHeight="299.0" prefWidth="200.0" style="-fx-alignment: center;">
                <children>
-                  <ImageView fx:id="movimage6" accessibleText="aaaa" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="navpfp">
+                  <ImageView fx:id="movimage6" accessibleText="aaaa" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <VBox.margin>
                         <Insets left="15.0" right="15.0" />
                      </VBox.margin>
@@ -110,7 +110,7 @@
             </VBox>
             <VBox prefHeight="299.0" prefWidth="200.0" style="-fx-alignment: center;">
                <children>
-                  <ImageView fx:id="movimage7" accessibleText="aaaa" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="navpfp">
+                  <ImageView fx:id="movimage7" accessibleText="aaaa" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <VBox.margin>
                         <Insets left="15.0" right="15.0" />
                      </VBox.margin>
@@ -120,7 +120,7 @@
             </VBox>
             <VBox prefHeight="299.0" prefWidth="200.0" style="-fx-alignment: center;">
                <children>
-                  <ImageView fx:id="movimage8" accessibleText="aaaa" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="navpfp">
+                  <ImageView fx:id="movimage8" accessibleText="aaaa" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <VBox.margin>
                         <Insets left="15.0" />
                      </VBox.margin>

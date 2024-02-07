@@ -109,6 +109,7 @@ public class AppController implements Initializable {
                     startTimer("Loading all data for user: " + selectedUser);
                     model.loadData(selectedUser);
                     movies.addAll(model.getObsTopMovieSeen());
+
                     labels.addAll(Arrays.asList(lbl1,lbl3,lbl2,lbl4, lbl5, lbl6, lbl7, lbl8));
                     imageViews.addAll(Arrays.asList(movimage1, movimage2, movimage3, movimage4,movimage5,movimage6,movimage7,movimage8));
 
@@ -173,6 +174,9 @@ public class AppController implements Initializable {
     }
 
     public void ClickPFP(MouseEvent mouseEvent) throws IOException {
+        //similar users / model.getObsSimilarUsers();
+        //name of the user / model.getObsLoggedInUser().getName();
+        //rating of the user / model.getObsLoggedInUser().getRatings();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/dk/easv/presentation/view/Profile.fxml"));
         Parent root = loader.load();
         Stage primaryStage = new Stage();

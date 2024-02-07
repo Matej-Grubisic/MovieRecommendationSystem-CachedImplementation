@@ -20,7 +20,7 @@
     -fx-background-color: linear-gradient(#141e30, #243b55);
 }
 
-#anchorpane {
+.anchorpane {
     -fx-background-color: linear-gradient(#141e30, #243b55);
 }
 
@@ -62,5 +62,5 @@
     -fx-background-color: black;
 }
 .navpfp:hover{
-
+    -fx-opacity: 0.5;
 }
