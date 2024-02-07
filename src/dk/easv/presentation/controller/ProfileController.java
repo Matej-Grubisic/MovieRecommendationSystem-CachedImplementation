@@ -3,12 +3,11 @@ package dk.easv.presentation.controller;
 import dk.easv.entities.User;
 import dk.easv.entities.UserSimilarity;
 import dk.easv.presentation.model.AppModel;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -25,7 +24,7 @@ public class ProfileController implements Initializable {
 
     public Label name;
     public Label movrating;
-    public TextArea similarUserTextArea;
+    public ListView similarUserListView;
 
     private AppController appController;
 
@@ -37,15 +36,18 @@ public class ProfileController implements Initializable {
 
 
     public void setData(AppModel model) {
-        this.model=model;
+        this.model = model;
 
-       name.setText(model.getObsLoggedInUser().getName());
-       movrating.setText(String.valueOf(model.getObsLoggedInUser().getRatingsSize()));
-       similarUserTextArea.setText(String.valueOf(model.getObsSimilarUsers()));
+        name.setText(model.getObsLoggedInUser().getName());
+        movrating.setText(String.valueOf(model.getObsLoggedInUser().getRatingsSize()));
+        ObservableList<String> similarUserNames = FXCollections.observableArrayList();
 
+        for (UserSimilarity similarUser : model.getObsSimilarUsers()) {
+            similarUserNames.add(similarUser.getName());
+        }
 
-
-
+        similarUserListView.setItems(similarUserNames);
+        
     }
 
     @Override
