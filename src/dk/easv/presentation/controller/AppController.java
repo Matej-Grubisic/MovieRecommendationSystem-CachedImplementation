@@ -177,8 +177,14 @@ public class AppController implements Initializable {
         //similar users / model.getObsSimilarUsers();
         //name of the user / model.getObsLoggedInUser().getName();
         //rating of the user / model.getObsLoggedInUser().getRatings();
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/dk/easv/presentation/view/Profile.fxml"));
         Parent root = loader.load();
+
+        ProfileController profileController = loader.getController();
+        profileController.setAppController(this);
+        profileController.setData(model);
+
         Stage primaryStage = new Stage();
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

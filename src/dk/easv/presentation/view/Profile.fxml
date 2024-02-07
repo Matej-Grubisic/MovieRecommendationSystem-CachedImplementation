@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -20,5 +21,6 @@
       <ImageView fx:id="pfp1" fitHeight="150.0" fitWidth="150.0" layoutX="48.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="name" layoutX="315.0" layoutY="77.0" prefHeight="10.0" prefWidth="150.0" text="Label" textFill="WHITE" />
       <Label fx:id="movrating" layoutX="390.0" layoutY="143.0" prefHeight="10.0" prefWidth="150.0" text="Label" textFill="WHITE" />
+      <TextArea fx:id="similarUserTextArea" layoutX="48.0" layoutY="216.0" prefHeight="200.0" prefWidth="200.0" />
    </children>
 </AnchorPane>
