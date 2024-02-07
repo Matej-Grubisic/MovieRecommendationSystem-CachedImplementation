@@ -2,6 +2,7 @@ package dk.easv.presentation.controller;
 
 import dk.easv.entities.*;
 import dk.easv.presentation.model.AppModel;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -35,6 +36,9 @@ public class AppController implements Initializable {
     private ImageView movimage8;
     String[] titles = {"godfather.png", "incredibles.png", "cat1.jpg", "aladdin.png", "mash4.png", "seven.png", "ferrisday.png", "rainman.png"};
     ArrayList<ImageView> imageViews = new ArrayList<>();
+    int posMov;
+
+    ArrayList<Movie> movies = new ArrayList<>();
     @FXML
     private Label lbl1;
     @FXML
@@ -86,7 +90,6 @@ public class AppController implements Initializable {
         this.model = model;
         lvUsers.setItems(model.getObsUsers());
         lvTopForUser.setItems(model.getObsTopMovieSeen());
-
         lvTopAvgNotSeen.setItems(model.getObsTopMovieNotSeen());
         lvTopSimilarUsers.setItems(model.getObsSimilarUsers());
         lvTopFromSimilar.setItems(model.getObsTopMoviesSimilarUsers());
@@ -99,6 +102,7 @@ public class AppController implements Initializable {
                 (observableValue, oldUser, selectedUser) -> {
                     startTimer("Loading all data for user: " + selectedUser);
                     model.loadData(selectedUser);
+                    movies.addAll(model.getObsTopMovieSeen());
                     labels.addAll(Arrays.asList(lbl1,lbl3,lbl2,lbl4, lbl5, lbl6, lbl7, lbl8));
                     imageViews.addAll(Arrays.asList(movimage1, movimage2, movimage3, movimage4,movimage5,movimage6,movimage7,movimage8));
 
@@ -117,10 +121,47 @@ public class AppController implements Initializable {
                     System.out.println(lbl1.getId());
                     for(int i = 0; i < labels.size(); i++){
                         labels.get(i).setText(String.valueOf(model.getObsTopMovieSeen().get(i).getTitle()));
+                        posMov = i;
                     }
+                   // System.out.println(movies);
                 });
 
         // Select the logged-in user in the listview, automagically trigger the listener above
         lvUsers.getSelectionModel().select(model.getObsLoggedInUser());
+    }
+
+
+    public void nextMov(ActionEvent actionEvent) {
+        int i;
+        for(i = 0;i < labels.size(); i++){
+            labels.get(i).setText(String.valueOf(model.getObsTopMovieSeen().get(posMov+i).getTitle()));
+        }
+        posMov += i ;
+        System.out.println(posMov);
+    }
+
+    public void prevMov(ActionEvent actionEvent) {
+        int i;
+        if(posMov > 8){
+            posMov -= 7;
+            for(i = 7;i >= 0; i--){
+
+                labels.get(i).setText(String.valueOf(movies.get(posMov -= 1).getTitle()));
+                System.out.println(i + "i" + " " + (posMov) +" posMov");
+            }
+            posMov += 7;
+            System.out.println(posMov + "Final");
+        }
+        else{
+            posMov = 104;
+            for(i = 7;i >= 0; i--){
+                posMov -= 1;
+                labels.get(i).setText(String.valueOf(movies.get(posMov-i).getTitle()));
+            }
+
+            System.out.println(posMov + "goes to 104");
+        }
+
+
     }
 }

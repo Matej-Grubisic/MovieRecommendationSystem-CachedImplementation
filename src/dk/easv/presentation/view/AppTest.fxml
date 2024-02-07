@@ -24,7 +24,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="53.0" prefWidth="343.0" styleClass="navbtn" text="Discover" textFill="WHITE">
+            <Button mnemonicParsing="false" prefHeight="58.0" prefWidth="325.0" styleClass="navbtn" text="Discover" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
@@ -135,5 +135,15 @@
             <Font size="24.0" />
          </font>
       </Label>
+      <Button layoutX="17.0" layoutY="393.0" mnemonicParsing="false" onAction="#prevMov" text="&lt;" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="1175.0" layoutY="393.0" mnemonicParsing="false" onAction="#nextMov" text="&gt;" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

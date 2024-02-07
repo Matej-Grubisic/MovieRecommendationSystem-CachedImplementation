@@ -3,6 +3,16 @@
     -fx-border-radius: 10px;
     -fx-background-color: transparent
 }
+.button:hover{
+    -fx-border-color: white;
+    -fx-border-radius:0px;
+    -fx-background-color: black;
+}
+.button:pressed{
+    -fx-border-color: white;
+    -fx-border-radius: 0px;
+    -fx-background-color: white;
+}
 #borderpane {
     -fx-start-margin:0;
     -fx-padding:0;
