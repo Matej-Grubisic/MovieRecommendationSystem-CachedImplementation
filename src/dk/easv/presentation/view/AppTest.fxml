@@ -29,7 +29,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <ImageView fx:id="imagepfp" accessibleText="aaaa" fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true" styleClass="navpfp">
+            <ImageView fx:id="imagepfp" accessibleText="aaaa" fitHeight="55.0" fitWidth="55.0" onMouseClicked="#ClickPFP" pickOnBounds="true" preserveRatio="true" styleClass="navpfp">
                <HBox.margin>
                   <Insets right="-5.0" />
                </HBox.margin></ImageView>

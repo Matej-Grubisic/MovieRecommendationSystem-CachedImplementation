@@ -4,13 +4,19 @@ import dk.easv.entities.*;
 import dk.easv.presentation.model.AppModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Array;
 import java.util.*;
@@ -131,6 +137,7 @@ public class AppController implements Initializable {
     }
 
 
+
     public void nextMov(ActionEvent actionEvent) {
         int i;
         for(i = 0;i < labels.size(); i++){
@@ -164,4 +171,13 @@ public class AppController implements Initializable {
 
 
     }
-}
+
+    public void ClickPFP(MouseEvent mouseEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/dk/easv/presentation/view/Profile.fxml"));
+        Parent root = loader.load();
+        Stage primaryStage = new Stage();
+        primaryStage.setScene(new Scene(root));
+        primaryStage.show();
+    }
+    }
+

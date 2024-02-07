@@ -37,7 +37,7 @@
                </rowConstraints>
                <children>
                   <Button mnemonicParsing="false" onAction="#signUp" stylesheets="@styles.css" text="Sign up" textFill="WHITE" GridPane.columnIndex="1" />
-                  <Button id="button" mnemonicParsing="false" onAction="#logIn" stylesheets="@styles.css" text="Log in" textFill="WHITE" />
+                  <Button id="button" fx:id="loginBTN" mnemonicParsing="false" onAction="#logIn" stylesheets="@styles.css" text="Log in" textFill="WHITE" />
                </children>
             </GridPane>
             <Label alignment="CENTER" layoutX="104.0" layoutY="11.0" prefHeight="31.0" prefWidth="247.0" styleClass="title" stylesheets="@styles.css" text="Movie recommendation" textAlignment="CENTER" textFill="WHITE" />

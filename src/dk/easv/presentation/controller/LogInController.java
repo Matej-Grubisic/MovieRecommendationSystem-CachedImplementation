@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -18,8 +19,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class LogInController implements Initializable {
+    public Button loginBTN;
     @FXML private PasswordField passwordField;
-    @FXML private TextField userId;
+    @FXML public TextField userId;
     private AppModel model;
 
     @Override
@@ -54,6 +56,8 @@ public class LogInController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong username or password");
             alert.showAndWait();
         }
+        Stage stage = (Stage) loginBTN.getScene().getWindow();
+        stage.close();
     }
 
     public void signUp(ActionEvent actionEvent) {
