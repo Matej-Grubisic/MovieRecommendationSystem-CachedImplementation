@@ -19,13 +19,13 @@
          </font>
       </Label>
       <ImageView fx:id="pfp1" fitHeight="150.0" fitWidth="150.0" layoutX="48.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="name" layoutX="315.0" layoutY="76.0" prefHeight="10.0" prefWidth="150.0" text="Label" textFill="WHITE">
+      <Label fx:id="name" layoutX="314.0" layoutY="70.0" prefHeight="10.0" prefWidth="150.0" text="Label" textFill="WHITE">
          <font>
-            <Font size="14.0" />
+            <Font size="21.0" />
          </font></Label>
-      <Label fx:id="movrating" layoutX="385.0" layoutY="134.0" prefHeight="33.0" prefWidth="150.0" text="Label" textFill="WHITE">
+      <Label fx:id="movrating" layoutX="383.0" layoutY="135.0" prefHeight="33.0" prefWidth="150.0" text="Label" textFill="WHITE">
          <font>
-            <Font size="14.0" />
+            <Font size="21.0" />
          </font></Label>
       <ListView fx:id="similarUserListView" layoutX="235.0" layoutY="200.0" prefHeight="150.0" prefWidth="230.0" styleClass="list" stylesheets="@styles.css" />
       <Label fx:id="movrating1" layoutX="67.0" layoutY="200.0" prefHeight="39.0" prefWidth="130.0" text="Similar users:" textFill="WHITE">

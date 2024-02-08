@@ -36,8 +36,18 @@
     -fx-background-color: transparent;
 }
 
-.list{
+.list-view,
+.list-view .list-cell{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
 
+.list-view{
+    -fx-border-color: white;
+}
+
+.list-cell:hover{
+    -fx-border-color: white;
 }
 
 .navbar{
