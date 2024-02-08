@@ -24,7 +24,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="58.0" prefWidth="325.0" styleClass="navbtn" text="Discover" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#openDiscover" prefHeight="58.0" prefWidth="325.0" styleClass="navbtn" text="Discover" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>

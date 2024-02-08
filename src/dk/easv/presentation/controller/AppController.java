@@ -22,8 +22,46 @@ import java.sql.Array;
 import java.util.*;
 
 public class AppController implements Initializable {
-    public ImageView imagepfp;
-    public ImageView imagelogo;
+    @FXML
+private ImageView imagepfp;
+    @FXML
+private ImageView imagelogo;
+    @FXML
+private ImageView imagelogo1;
+    @FXML
+private ImageView imagepfp1;
+    @FXML
+private ImageView movimage11;
+    @FXML
+private ImageView movimage22;
+    @FXML
+private ImageView movimage33;
+    @FXML
+private ImageView movimage44;
+    @FXML
+private ImageView movimage55;
+    @FXML
+private ImageView movimage66;
+    @FXML
+private ImageView movimage77;
+    @FXML
+private ImageView movimage88;
+    @FXML
+private Label lbl11;
+    @FXML
+private Label lbl22;
+    @FXML
+private Label lbl33;
+    @FXML
+private Label lbl44;
+    @FXML
+private Label lbl55;
+    @FXML
+private Label lbl66;
+    @FXML
+private Label lbl77;
+    @FXML
+private Label lbl88;
     @FXML
     private ImageView movimage1;
     @FXML
@@ -189,5 +227,18 @@ public class AppController implements Initializable {
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
+
+    public void openDiscover(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/dk/easv/presentation/view/Discover.fxml"));
+        Parent root = loader.load();
+
+        DiscoverController discoverController = loader.getController();
+        discoverController.setAppControllerD(this);
+        discoverController.setData(model);
+
+        Stage primaryStage = new Stage();
+        primaryStage.setScene(new Scene(root));
+        primaryStage.show();
     }
+}
 

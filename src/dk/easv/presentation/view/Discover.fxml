@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="814.0" prefWidth="1230.0" styleClass="anchorpane" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.easv.presentation.controller.AppController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="814.0" prefWidth="1230.0" styleClass="anchorpane" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.easv.presentation.controller.DiscoverController">
     <children>
         <HBox layoutY="-5.0" prefHeight="55.0" prefWidth="1243.0" styleClass="navbar" stylesheets="@styles.css">
             <children>
@@ -132,22 +132,22 @@
                 <Font size="24.0" />
             </font>
         </Label>
-        <Button layoutX="36.0" layoutY="250.0" mnemonicParsing="false" onAction="#prevMov" text="&lt;" textFill="WHITE">
+        <Button layoutX="36.0" layoutY="250.0" mnemonicParsing="false" onAction="#prevMov1" text="&lt;" textFill="WHITE">
             <font>
                 <Font size="16.0" />
             </font>
         </Button>
-        <Button layoutX="1158.0" layoutY="632.0" mnemonicParsing="false" onAction="#nextMov" text="&gt;" textFill="WHITE">
+        <Button layoutX="1158.0" layoutY="632.0" mnemonicParsing="false" onAction="#nextMov1" text="&gt;" textFill="WHITE">
             <font>
                 <Font size="16.0" />
             </font>
         </Button>
-      <Button layoutX="38.0" layoutY="629.0" mnemonicParsing="false" onAction="#prevMov" text="&lt;" textFill="WHITE">
+      <Button layoutX="38.0" layoutY="629.0" mnemonicParsing="false" onAction="#prevMov2" text="&lt;" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button layoutX="1157.0" layoutY="252.0" mnemonicParsing="false" onAction="#nextMov" text="&gt;" textFill="WHITE">
+      <Button layoutX="1157.0" layoutY="252.0" mnemonicParsing="false" onAction="#nextMov2" text="&gt;" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
