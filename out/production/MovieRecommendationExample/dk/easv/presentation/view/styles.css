@@ -13,6 +13,21 @@
     -fx-border-radius: 0px;
     -fx-background-color: white;
 }
+
+.buttonFriend{
+    -fx-border-radius: 0;
+    -fx-border-color: none;
+    -fx-background-color: lime;
+}
+.buttonFriend:hover{
+    -fx-text-fill: grey;
+    -fx-border-color: none;
+    -fx-background-color: lightgreen;
+}
+.buttonFriend:pressed{
+    -fx-border-color: none;
+    -fx-background-color: green;
+}
 #borderpane {
     -fx-start-margin:0;
     -fx-padding:0;
