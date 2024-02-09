@@ -137,7 +137,7 @@
                 <Font size="16.0" />
             </font>
         </Button>
-        <Button layoutX="1158.0" layoutY="632.0" mnemonicParsing="false" onAction="#nextMov1" text="&gt;" textFill="WHITE">
+        <Button layoutX="1158.0" layoutY="632.0" mnemonicParsing="false" onAction="#nextMov2" text="&gt;" textFill="WHITE">
             <font>
                 <Font size="16.0" />
             </font>
@@ -147,7 +147,7 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <Button layoutX="1157.0" layoutY="252.0" mnemonicParsing="false" onAction="#nextMov2" text="&gt;" textFill="WHITE">
+      <Button layoutX="1157.0" layoutY="252.0" mnemonicParsing="false" onAction="#nextMov1" text="&gt;" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
