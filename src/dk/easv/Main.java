@@ -1,11 +1,11 @@
 package dk.easv;
 
+import dk.easv.dataaccess.Test1;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 public class Main extends Application {
 
     @Override
@@ -15,6 +15,8 @@ public class Main extends Application {
         // primaryStage.setFullScreen(true);
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
+        Test1 test1 = new Test1();
+        test1.getImage();
     }
 
 
