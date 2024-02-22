@@ -15,11 +15,18 @@ import java.util.*;
 
 
 public class Test1 {
-        public void getImage() throws IOException {
-            String title = "Get up and dance";
+        public String getImage(String title) throws IOException {
             title = title.replace(" ", "+");
+            if(title.contains(":")){
+                title = title.substring(0, title.indexOf(":"));
+            }
+            if(title.contains("/")){
+                title = title.substring(0, title.indexOf("/"));
+            }
+
+            System.out.println(title);
             URL api1 = new URL("https://www.omdbapi.com/?t="+title+"&apikey=4c9001f2");
-            String result = stream(api1, title);
+            stream(api1, title);
             JsonParser parser = new JsonParser();
             try{
                 Object obj = parser.parse(new FileReader("src\\dk\\easv\\data\\" + title +".json"));
@@ -27,10 +34,12 @@ public class Test1 {
                 JsonObject jsonObject = (JsonObject) obj;
 
                 String poster = String.valueOf(jsonObject.get("Poster"));
-                System.out.println(poster);
+
+                return poster;
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            return null;
         }
         public static String stream(URL url, String title) throws IOException {
             try (InputStream input = url.openStream()) {
@@ -41,6 +50,7 @@ public class Test1 {
                 while ((c = reader.read()) != -1) {
                     json.append((char) c);
                 }
+                //System.out.println(json);
                 CreateFile.create(title);
                 CreateFile.write(title, json.toString());
                 return json.toString();

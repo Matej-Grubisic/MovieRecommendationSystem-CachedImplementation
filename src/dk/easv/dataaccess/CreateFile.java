@@ -4,6 +4,7 @@ import java.io.IOException;  // Import the IOException class to handle errors
 import java.io.FileWriter;
 public class CreateFile {
     public static void create(String title) {
+
         try {
             File myObj = new File("src\\dk\\easv\\data\\" + title +".json");
             if (myObj.createNewFile()) {
