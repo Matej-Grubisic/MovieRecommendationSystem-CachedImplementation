@@ -207,37 +207,7 @@ private Label lbl88;
     public void nextMov(ActionEvent actionEvent) {
         int i;
         for(i = 0;i < labels.size(); i++){
-            Test1 test1 = new Test1();
-            String poster;
-            try {
-                poster = test1.getImage(String.valueOf(model.getObsTopMovieSeen().get(posMov+i).getTitle()));
-                poster = poster.substring(1,poster.length()-1);
-                System.out.println(poster.equals("N/A"));
-                if(poster.equals("N/A")){
-                    //fix this bitch
-                    File file = new File("src/dk/easv/presentation/view/images/noimage.png");
-                    Image image = new Image(file.toURI().toString(), 200, 200, false ,true);
-                    imageViews.get(i).setImage(image);
-                }
-                else{
-                    System.out.println(poster);
-                    URL url = new URL(poster);
-                    BufferedImage img = ImageIO.read(url);
-                    File f = new File("src/dk/easv/presentation/view/images/"+model.getObsTopMovieSeen().get(posMov+i).getTitle()+".jpg");
-                    if(f.exists() && !f.isDirectory()) {
-                        ImageIO.write(img, "jpg", f);
-                        Image image1 = new Image(f.toURI().toString(), 200, 200, false, false);
-                        imageViews.get(i).setImage(image1);
-                    }
-                    else{
-                        ImageIO.write(img, "jpg", f);
-                        Image image1 = new Image(f.toURI().toString(), 200, 200, false, false);
-                        imageViews.get(i).setImage(image1);
-                    }
-                }
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+            imageShowN(i, posMov);
             labels.get(i).setText(String.valueOf(model.getObsTopMovieSeen().get(posMov+i).getTitle()));
         }
         posMov += i ;
@@ -249,37 +219,7 @@ private Label lbl88;
         if(posMov > 8){
             posMov -= 7;
             for(i = 7;i >= 0; i--){
-                Test1 test1 = new Test1();
-                String poster;
-                try {
-                    poster = test1.getImage(String.valueOf(model.getObsTopMovieSeen().get(posMov - 1).getTitle()));
-                    poster = poster.substring(1,poster.length()-1);
-                    if(poster.equals("N/A")){
-                        //fix this bitch
-                        System.out.println("no image");
-                        File file = new File("src/dk/easv/presentation/view/images/noimage.png");
-                        Image image = new Image(file.toURI().toString(), 200, 200, false ,false);
-                        imageViews.get(i).setImage(image);
-                    }
-                    else{
-                        System.out.println(poster);
-                        URL url = new URL(poster);
-                        BufferedImage img = ImageIO.read(url);
-                        File f = new File("src/dk/easv/presentation/view/images/"+model.getObsTopMovieSeen().get(posMov - 1).getTitle()+".jpg");
-                        if(f.exists() && !f.isDirectory()) {
-                            ImageIO.write(img, "jpg", f);
-                            Image image1 = new Image(f.toURI().toString(), 200, 200, false, false);
-                            imageViews.get(i).setImage(image1);
-                        }
-                        else{
-                            ImageIO.write(img, "jpg", f);
-                            Image image1 = new Image(f.toURI().toString(), 200, 200, false, false);
-                            imageViews.get(i).setImage(image1);
-                        }
-                    }
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
+                imageShowP1(i, posMov);
                 labels.get(i).setText(String.valueOf(movies.get(posMov -= 1).getTitle()));
                 System.out.println(i + "i" + " " + (posMov) +" posMov");
             }
@@ -290,43 +230,12 @@ private Label lbl88;
             posMov = 104;
             for(i = 7;i >= 0; i--){
                 posMov -= 1;
-                Test1 test1 = new Test1();
-                String poster;
-                try {
-                    poster = test1.getImage(String.valueOf(model.getObsTopMovieSeen().get(posMov - i).getTitle()));
-                    poster = poster.substring(1,poster.length()-1);
-                    if(poster.equals("N/A")){
-                        //fix this bitch
-                        File file = new File("src/dk/easv/presentation/view/images/noimage.png");
-                        Image image = new Image(file.toURI().toString(), 200, 200, false ,true);
-                        imageViews.get(i).setImage(image);
-                    }
-                    else{
-                        System.out.println(poster);
-                        URL url = new URL(poster);
-                        BufferedImage img = ImageIO.read(url);
-                        File f = new File("src/dk/easv/presentation/view/images/"+model.getObsTopMovieSeen().get(posMov - i).getTitle()+".jpg");
-                        if(f.exists() && !f.isDirectory()) {
-                            ImageIO.write(img, "jpg", f);
-                            Image image1 = new Image(f.toURI().toString(), 200, 200, false, false);
-                            imageViews.get(i).setImage(image1);
-                        }
-                        else{
-                            ImageIO.write(img, "jpg", f);
-                            Image image1 = new Image(f.toURI().toString(), 200, 200, false, false);
-                            imageViews.get(i).setImage(image1);
-                        }
-                    }
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
+                imageShowP2(i, posMov);
                 labels.get(i).setText(String.valueOf(movies.get(posMov-i).getTitle()));
             }
 
             System.out.println(posMov + "goes to 104");
         }
-
-
     }
 
     public void ClickPFP(MouseEvent mouseEvent) throws IOException {
@@ -357,6 +266,107 @@ private Label lbl88;
         Stage primaryStage = new Stage();
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
+    }
+
+    public void imageShowN(int i, int posMov){
+        Test1 test1 = new Test1();
+        String poster;
+        try {
+            poster = test1.getImage(String.valueOf(model.getObsTopMovieSeen().get(posMov+i).getTitle()));
+            poster = poster.substring(1,poster.length()-1);
+            System.out.println(poster.equals("N/A"));
+            if(!poster.contains("https://")){
+                //fix this bitch
+                File file = new File("src/dk/easv/presentation/view/images/noimage.png");
+                Image image = new Image(file.toURI().toString(), 200, 200, false ,true);
+                imageViews.get(i).setImage(image);
+            }
+            else{
+                System.out.println(poster);
+                URL url = new URL(poster);
+                BufferedImage img = ImageIO.read(url);
+                File f = new File("src/dk/easv/presentation/view/images/"+model.getObsTopMovieSeen().get(posMov+i).getTitle()+".jpg");
+                if(f.exists() && !f.isDirectory()) {
+                    ImageIO.write(img, "jpg", f);
+                    Image image1 = new Image(f.toURI().toString(), 200, 200, false, false);
+                    imageViews.get(i).setImage(image1);
+                }
+                else{
+                    ImageIO.write(img, "jpg", f);
+                    Image image1 = new Image(f.toURI().toString(), 200, 200, false, false);
+                    imageViews.get(i).setImage(image1);
+                }
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void imageShowP2(int i, int posMov){
+        Test1 test1 = new Test1();
+        String poster;
+        try {
+            poster = test1.getImage(String.valueOf(model.getObsTopMovieSeen().get(posMov-i).getTitle()));
+            poster = poster.substring(1,poster.length()-1);
+            System.out.println(poster.equals("N/A"));
+            if(!poster.contains("https://")){
+                //fix this bitch
+                File file = new File("src/dk/easv/presentation/view/images/noimage.png");
+                Image image = new Image(file.toURI().toString(), 200, 200, false ,true);
+                imageViews.get(i).setImage(image);
+            }
+            else{
+                System.out.println(poster);
+                URL url = new URL(poster);
+                BufferedImage img = ImageIO.read(url);
+                File f = new File("src/dk/easv/presentation/view/images/"+model.getObsTopMovieSeen().get(posMov-i).getTitle()+".jpg");
+                if(f.exists() && !f.isDirectory()) {
+                    ImageIO.write(img, "jpg", f);
+                    Image image1 = new Image(f.toURI().toString(), 200, 200, false, false);
+                    imageViews.get(i).setImage(image1);
+                }
+                else{
+                    ImageIO.write(img, "jpg", f);
+                    Image image1 = new Image(f.toURI().toString(), 200, 200, false, false);
+                    imageViews.get(i).setImage(image1);
+                }
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void imageShowP1(int i, int posMov){
+        Test1 test1 = new Test1();
+        String poster;
+        try {
+            poster = test1.getImage(String.valueOf(model.getObsTopMovieSeen().get(posMov-1).getTitle()));
+            poster = poster.substring(1,poster.length()-1);
+            System.out.println(poster.equals("N/A"));
+            if(!poster.contains("https://")){
+                //fix this bitch
+                File file = new File("src/dk/easv/presentation/view/images/noimage.png");
+                Image image = new Image(file.toURI().toString(), 200, 200, false ,true);
+                imageViews.get(i).setImage(image);
+            }
+            else{
+                System.out.println(poster);
+                URL url = new URL(poster);
+                BufferedImage img = ImageIO.read(url);
+                File f = new File("src/dk/easv/presentation/view/images/"+model.getObsTopMovieSeen().get(posMov-1).getTitle()+".jpg");
+                if(f.exists() && !f.isDirectory()) {
+                    ImageIO.write(img, "jpg", f);
+                    Image image1 = new Image(f.toURI().toString(), 200, 200, false, false);
+                    imageViews.get(i).setImage(image1);
+                }
+                else{
+                    ImageIO.write(img, "jpg", f);
+                    Image image1 = new Image(f.toURI().toString(), 200, 200, false, false);
+                    imageViews.get(i).setImage(image1);
+                }
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
 
